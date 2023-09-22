@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms tasks</title>
+</head>
+<body>
+    <form id="contacts-form">
+        <div class="form-control">
+            <label for="person-name">Name:</label>
+            <input type="text" name="name" id="person-name" placeholder="Enter your name..." value="John" required>
+        </div>
+        <div class="form-control">
+            <label for="person-surname">Surname:</label>
+            <input type="text" name="surname" id="person-surname" placeholder="Enter your last name..." value="Doe" required>
+        </div>
+        <div class="form-control">
+            <label for="person-age">Age:</label>
+            <input type="number" name="age" id="person-age" placeholder="Enter your age..." value="22" required>
+        </div>
+        <div class="form-control">
+            <label for="person-tel">Tel. Nr.:</label>
+            <input type="tel" name="tel" id="person-tel" value="134454534" placeholder="Enter your tel. nr...">
+        </div>
+        <div class="form-control">
+            <label for="person-email">Email:</label>
+            <input type="email" name="email" id="person-email" placeholder="Enter your email..." value="johndoe@gmail.com" required>
+        </div>
+
+        <div class="form-control">
+            <label for="points">Specify your IT knowledge skills in points between 0 and 10: </label>
+            <input type="range" name="points" id="points" min="0" max="10" step="1" value="9">
+            <p>Value: <output id="value"></output> </p>
+        </div>
+
+        <fieldset>
+            <legend>Your group number:</legend>
+            <div class="form-control">
+                <input type="radio" name="group-number" id="1" value="FEU 1gr">
+                <label for="1">FEU 1gr</label>
+            </div>
+            <div class="form-control">
+                <input type="radio" name="group-number" id="2" value="FEU 2gr">
+                <label for="2">FEU 2gr</label>
+            </div>
+            <div class="form-control">
+                <input type="radio" name="group-number" id="3" value="FEU 3gr">
+                <label for="3">FEU 3gr</label>
+            </div>
+            <div class="form-control">
+                <input type="radio" name="group-number" id="4" value="FEU 4gr">
+                <label for="4">FEU 4gr</label>
+            </div>
+            <div class="form-control">
+                <input type="radio" name="group-number" id="5" value="FEU 5gr">
+                <label for="5">FEU 5gr</label>
+            </div>
+            <div class="form-control">
+                <input type="radio" name="group-number" id="6" value="FEU 6gr">
+                <label for="6">FEU 6gr</label>
+            </div>
+            <div class="form-control">
+                <input type="radio" name="group-number" id="7" value="FEU 7gr">
+                <label for="7">FEU 7gr</label>
+            </div>
+            <div class="form-control">
+                <input type="radio" name="group-number" id="8" value="FEU 8gr">
+                <label for="8">FEU 8gr</label>
+            </div>
+            <div class="form-control">
+                <input type="radio" name="group-number" id="9" value="FEU 9gr">
+                <label for="9">FEU 9gr</label>
+            </div>
+            <div class="form-control">
+                <input type="radio" name="group-number" id="10" value="FEU 10gr">
+                <label for="10">FEU 10gr</label>
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>What programming languages are you interested in?</legend>
+            <div class="form-control">
+                <label for="language">React</label>
+                <input type="checkbox" name="language" id="react-language" value="React">
+            </div>
+            <div class="form-control">
+                <label for="language">Malbolge</label>
+                <input type="checkbox" name="language" id="malbolge-language" value="Malbolge">
+            </div>
+            <div class="form-control">
+                <label for="language">Python</label>
+                <input type="checkbox" name="language" id="python-language" value="Python">
+            </div>
+            <div class="form-control">
+                <label for="language">PHP</label>
+                <input type="checkbox" name="language" id="php-language" value="PHP">
+            </div>
+        </fieldset>
+        <button type="submit">Create student</button>
+    </form>
+    <div id="students-list"></div>
+
+
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+<!-- PIRMA DALIS:
+Sukurti kontaktų formą.
+1. Kontaktų formoje turi būti šie laukeliai:
+    1. Tekstinis laukelis vardui (privalomas).
+    2. Tekstinis laukelis pavardei (privalomas).
+    3. Skaičiaus laukelis amžiui (privalomas).
+    4. Laukelis įvesti telefono numerį (neprivalomas).
+    5. Laukelis įvesti el. paštą (privalomas).
+    6. Range tipo laukelis, kuris skirtas įvertinti savo IT žinias nuo 1 iki 10. Galimas vertinimas tik sveikiems skaičiams.
+    7. Radio tipo laukeliai, kuriuose pasirenkamas grupės numeris. Turi būti galimybė pasirinkti grupes nuo FEU 1gr. iki FEU 10gr.
+    8. Checkbox tipo laukeliai, kuriuose galima pasirinkti dominančias programavimo kalbas (bent 4 skirtingi checkbox elementai).
+    9. Šalia kiekvieno įvesties (input) elemento, pridėti label elementą, kuris žymi laukelio pavadinimą.
+ 
+ANTRA DALIS:
+1. Sukurti div elementą, kuris turės id „students-list".
+2. Kiekvieną kartą pridavus formą (submit), turi būti sukurtas naujas div elementas su klase „student-item" ir pridedamas į „students-list" elemento pradžią.
+3. Duomenys apie studentą turi būti įdėti į „student-item" elementą.
+ 
+4. Sukūrus studentą, turi iššokti <span> elementas, kuris informuoja apie studento sukūrimą: „Sukurtas studentas (Vardas Pavardė)". Šis span elementas dingsta po 5 sekundžių.
+5. Šalia range tipo laukelio, sukurti span (arba output) elementą ir jame atvaizduoti range laukelio reikšmę jam keičiantis. -->
